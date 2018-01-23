@@ -47,10 +47,24 @@ public class _03Mapping {
         System.out.println(wordLengths);
 
         //2. map - 중복된 문자 제거한 word 리스트
-
+        //[[Ljava.lang.String;@19bb089b, [Ljava.lang.String;@4563e9ab] 출력된 결과
+        //이유: 반환을 Stream<String[]>으로 해줬기 때문이다.
+        System.out.println(words.stream()
+        						.map(w -> w.split(""))
+        						.distinct()
+        						.collect(Collectors.toList()))
+        						;
 
         //3.flatMap  - 중복된 문자 제거가 word 리스트
-
+        //1단계 map 반환 : Stream<String[]>
+        //2단계 flatMap 반환: Stream<String>
+        
+        words.stream()
+        	 .map(w -> w.split(""))
+        	 .flatMap((String[] strs) -> Arrays.stream(strs))
+        	 .distinct()
+        	 .forEach(str -> System.out.println(str))
+        	 ;
 
 
 

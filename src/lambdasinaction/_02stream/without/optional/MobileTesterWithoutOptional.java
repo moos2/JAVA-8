@@ -16,7 +16,7 @@ public class MobileTesterWithoutOptional {
 		DisplayFeatures dfeatures2 = new DisplayFeatures("0", resolution2);
 		Mobile mobile2 = new Mobile(2015001, "Apple", "iPhone 6s", dfeatures2);		
 		int mobileWidth2 = mService.getMobileScreenWidth(mobile2);
-		System.out.println("Apple iPhone 16s Screen Width = " + mobileWidth2);
+		System.out.println("Apple iPhone 6s Screen Width = " + mobileWidth2);
 
 	}
 
